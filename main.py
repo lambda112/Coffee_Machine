@@ -4,7 +4,6 @@ import os
 # Ask the user what flavour they want return flavour type
 # Allow machine to be turned off with the keyword 'off' 
 # Allow user to enter keyword report, which will generate a report that shows current rescource values
-
 def get_order():
     coffee_type = input("What would you like? (espresso, latte, cappuccino): ")
     while coffee_type not in MENU.keys():
@@ -24,7 +23,6 @@ def get_order():
 
 
 # Check if there are enough rescources
-
 def check_rescources(): 
     order = get_order()["ingredients"]
 
@@ -38,6 +36,19 @@ def check_rescources():
 
 
 # Process coins 
+def enter_coins():
+    while True:
+        try:
+            pennies = (int(input("How many pennies?: ")) / 100)
+            nickles = (int(input("How many nickles?: ")) / 100) * 5
+            dimes = (int(input("How many dimes?: ")) / 100) * 10 
+            quarters = (int(input("How many quarters?: ")) / 100) * 25
+            amount = pennies + nickles + dimes + quarters
+            return amount
 
+        except ValueError:
+            print("Please enter a valid amount!\n")       
+            
 
+print(enter_coins())
 # Check if transaction is successful
