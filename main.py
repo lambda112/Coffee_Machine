@@ -47,10 +47,10 @@ def enter_coins() -> float:
 
     while True:
         try:
-            pennies = (int(input("How many pennies?: ")) / 100)
-            nickles = (int(input("How many nickles?: ")) / 100) * 5
-            dimes = (int(input("How many dimes?: ")) / 100) * 10 
-            quarters = (int(input("How many quarters?: ")) / 100) * 25
+            pennies = int(input("How many pennies?: ")) * 0.01
+            nickles = int(input("How many nickles?: ")) * 0.05
+            dimes = int(input("How many dimes?: ")) / 100 * 0.10 
+            quarters = int(input("How many quarters?: ")) * 0.25
 
             coin_amount = pennies + nickles + dimes + quarters
             return coin_amount
