@@ -21,8 +21,23 @@ def get_order():
     coffee_type = MENU[coffee_type]
     return coffee_type
 
+
+
 # Check if there are enough rescources
 
+def check_rescources(): 
+    order = get_order()
+    
+    for i in resources:
+        coffee_amount = order["ingredients"].get(i, False)
+
+        if coffee_amount and resources[i] < coffee_amount:
+            print(f"Sorry not enough {i}!") 
+
+        elif coffee_amount: 
+            resources[i] -= coffee_amount
+
+    return resources
 
 # Process coins 
 
