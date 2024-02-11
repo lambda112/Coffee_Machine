@@ -1,5 +1,10 @@
-# Ask the user what flavour they want return flavour type
+from rescource_data import MENU, resources
 
+
+# Ask the user what flavour they want return flavour type
+coffee_type = input("What would you like? (espresso, latte, cappuccino): ")
+coffee_type = MENU[coffee_type]
+print(coffee_type)
 
 # Allow machine to be turned off with the keyword 'off' 
 
